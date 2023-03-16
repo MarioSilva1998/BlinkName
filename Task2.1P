@@ -1,0 +1,108 @@
+//M - -
+//A . -
+//R . - .
+//I . .
+//O - - -
+
+//1 unit in this scenario = 0.5 seconds/500ms
+
+//. = 1 unit
+//- = 3 units
+//Intra-character space = 1 unit
+//Inter-character space = 3 units
+//Delay betweens words = 7 units
+
+int led = D7;
+int pushbutton = D5;
+int buttonActive = LOW;
+
+void setup() {
+
+    pinMode(led, OUTPUT);
+    pinMode(pushbutton, INPUT);
+}
+
+void loop() {
+    
+buttonActive = digitalRead(pushbutton);
+    
+    if (buttonActive == HIGH)
+    {
+        //M - -
+        digitalWrite(led, HIGH);
+        delay(1500ms);
+        digitalWrite(led, LOW);
+        delay(500ms);
+        
+        digitalWrite(led, HIGH);
+        delay(1500ms);
+        
+        //Delay between characters
+        digitalWrite(led, LOW);
+        delay(1500ms);
+        
+        //A . -
+        digitalWrite(led, HIGH);
+        delay(500ms);
+        digitalWrite(led, LOW);
+        delay(500ms);
+        
+        digitalWrite(led, HIGH);
+        delay(1500ms);
+
+        //Delay between characters
+        digitalWrite(led, LOW);
+        delay(1500ms);
+        
+        //R . - .
+        digitalWrite(led, HIGH);
+        delay(500ms);
+        digitalWrite(led, LOW);
+        delay(500ms);
+        
+        digitalWrite(led, HIGH);
+        delay(1500ms);
+        digitalWrite(led, LOW);
+        delay(500ms);
+        
+        digitalWrite(led, HIGH);
+        delay(500ms);
+
+        //Delay between characters
+        digitalWrite(led, LOW);
+        delay(1500ms);
+        
+        //I . .
+        digitalWrite(led, HIGH);
+        delay(500ms);
+        digitalWrite(led, LOW);
+        delay(500ms);
+        
+        digitalWrite(led, HIGH);
+        delay(500ms);
+        
+        //Delay between characters
+        digitalWrite(led, LOW);
+        delay(1500ms);
+        
+        //O - - -
+        digitalWrite(led, HIGH);
+        delay(1500ms);
+        digitalWrite(led, LOW);
+        delay(500ms);
+        
+        digitalWrite(led, HIGH);
+        delay(1500ms);
+        digitalWrite(led, LOW);
+        delay(500ms);
+        
+        digitalWrite(led, HIGH);
+        delay(1500ms);
+        digitalWrite(led, LOW);
+        delay(3500ms);
+    }
+    else
+    {
+        digitalWrite(led, LOW);
+    }
+}
